@@ -44,9 +44,20 @@ Why this architecture is good enough:
 
 ## Metrics
 
-Run shown in the screenshot:
+The model prints train/val loss and accuracy every epoch, because watching numbers go down is half the dopamine.
 
-![Training metrics](metrics.png)
+Terminal run screenshot:
+
+![Training metrics](assets/metric.png)
+
+I also plot the training curves with Matplotlib while training. `train.py` uses the `history` returned by `Network.fit()` to graph:
+
+- train loss vs val loss
+- train accuracy vs val accuracy
+
+The generated plot gets saved into the `assets` folder as `plot.png`:
+
+![Loss and accuracy plot](assets/plot.png)
 
 ```text
 train=54000 val=6000 test=10000
@@ -125,11 +136,8 @@ Try:
 ## Files
 
 ```text
-nn.py             neural net layers, loss, optimizer, training loop
-datasetloader.py  MNIST download + preprocessing
-train.py          model architecture + training config
+src/nn.py             neural net layers, loss, optimizer, training loop
+src/datasetloader.py  MNIST download + preprocessing
+src/train.py          model architecture + training config
+assets/               saved terminal output, generated plots
 ```
-
-## Notes
-
-This is a learning/showcase project, not a production ML framework. But it does the real forward pass, backward pass, optimization, and evaluation from scratch — which is the whole point.
