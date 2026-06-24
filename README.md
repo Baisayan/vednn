@@ -1,4 +1,4 @@
-# vednn
+# vednn - a NumPy-only neural network framework
 
 Tiny neural net from scratch because apparently importing PyTorch was too easy.
 

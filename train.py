@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-from datasetloader import load_data
-from nn import Network, Dense, ReLU, Softmax, Adam, CrossEntropy
+from data.datasetloader import load_data
+from nn.nn import Network, Dense, ReLU, Softmax, Adam, CrossEntropy
 
 SEED = 42
 EPOCHS = 20
