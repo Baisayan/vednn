@@ -1,0 +1,57 @@
+{
+    "experiment": "optimizer_comparison",
+    "fixed_configuration": {
+        "architecture": [
+            256,
+            128
+        ],
+        "learning_rate": 0.001,
+        "batch_size": 64,
+        "epochs": 10,
+        "activation": "ReLU",
+        "dropout": 0.0,
+        "seed": 42
+    },
+    "selected_optimizer": "Adam",
+    "results": [
+        {
+            "optimizer": "SGD",
+            "train_accuracy": 0.8926296296296297,
+            "validation_accuracy": 0.8896666666666667,
+            "test_accuracy": 0.9007,
+            "train_loss": 0.3981983743915626,
+            "validation_loss": 0.41072723591148375,
+            "test_loss": 0.38074691101368036,
+            "best_validation_accuracy": 0.8896666666666667,
+            "best_validation_loss": 0.41072723591148375,
+            "best_epoch": 10,
+            "training_time_seconds": 32.48588294500223
+        },
+        {
+            "optimizer": "Momentum",
+            "train_accuracy": 0.9556851851851852,
+            "validation_accuracy": 0.947,
+            "test_accuracy": 0.9514,
+            "train_loss": 0.15602474220644041,
+            "validation_loss": 0.18125178840421924,
+            "test_loss": 0.16449826084837268,
+            "best_validation_accuracy": 0.947,
+            "best_validation_loss": 0.18125178840421924,
+            "best_epoch": 10,
+            "training_time_seconds": 55.07916107899655
+        },
+        {
+            "optimizer": "Adam",
+            "train_accuracy": 0.9962777777777778,
+            "validation_accuracy": 0.9745,
+            "test_accuracy": 0.9791,
+            "train_loss": 0.010931797167158475,
+            "validation_loss": 0.11008610150200328,
+            "test_loss": 0.09120738987874055,
+            "best_validation_accuracy": 0.9763333333333334,
+            "best_validation_loss": 0.08909464602629392,
+            "best_epoch": 5,
+            "training_time_seconds": 55.1631660109997
+        }
+    ]
+}
