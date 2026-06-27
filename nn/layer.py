@@ -73,20 +73,6 @@ class Sigmoid(Layer):
         return grad_output * s * (1.0 - s)
 
 
-class Softmax(Layer):
-    def forward(self, x, training=False):
-        self.input = x
-        shifted = x - np.max(x, axis=1, keepdims=True)
-        exp = np.exp(shifted)
-        self.output = exp / np.sum(exp, axis=1, keepdims=True)
-        return self.output
-
-    def backward(self, grad_output):
-        s = self.output
-        dot = np.sum(grad_output * s, axis=1, keepdims=True)
-        return s * (grad_output - dot)
-
-
 class Dropout(Layer):
     def __init__(self, rate=0.5, seed=None):
         super().__init__()

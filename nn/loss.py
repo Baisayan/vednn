@@ -1,36 +1,37 @@
 import numpy as np
 
-_EPS = 1e-12
-
 class Loss:
-
-    def forward(self, y_pred, y_true):
+    def forward(self, preds, targets):
         raise NotImplementedError
 
-    def backward(self, y_pred, y_true):
+    def backward(self, preds, targets):
         raise NotImplementedError
 
-    def __call__(self, y_pred, y_true):
-        return self.forward(y_pred, y_true)
+    def __call__(self, preds, targets):
+        return self.forward(preds, targets)
+
 
 class MSE(Loss):
+    def forward(self, preds, targets):
+        return np.mean((preds - targets) ** 2)
 
-    def forward(self, y_pred, y_true):
-        return np.mean((y_pred - y_true) ** 2)
-
-    def backward(self, y_pred, y_true):
-        n = y_pred.shape[0] * y_pred.shape[1]
-        return 2.0 * (y_pred - y_true) / n
+    def backward(self, preds, targets):
+        return 2.0 * (preds - targets) / preds.size
 
 
-class CrossEntropy(Loss):
+class SoftmaxCrossEntropy(Loss):
+    def __init__(self):
+        self.probs = None
 
-    def forward(self, y_pred, y_true):
-        n = y_pred.shape[0]
-        clipped = np.clip(y_pred, _EPS, 1.0)
-        return -np.sum(y_true * np.log(clipped)) / n
+    def forward(self, preds, targets):
+        shifted = preds - np.max(preds, axis=1, keepdims=True)
+        exp = np.exp(shifted)
+        self.probs = exp / np.sum(exp, axis=1, keepdims=True)
 
-    def backward(self, y_pred, y_true):
-        n = y_pred.shape[0]
-        clipped = np.clip(y_pred, _EPS, 1.0)
-        return -(y_true / clipped) / n
+        n = preds.shape[0]
+        clipped = np.clip(self.probs, 1e-12, 1.0)
+        return -np.sum(targets * np.log(clipped)) / n
+
+    def backward(self, preds, targets):
+        n = preds.shape[0]
+        return (self.probs - targets) / n
