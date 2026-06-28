@@ -1,0 +1,83 @@
+{
+    "experiment": "dropout_ablation",
+    "fixed_configuration": {
+        "architecture": [
+            256,
+            128
+        ],
+        "optimizer": "Adam",
+        "learning_rate": 0.001,
+        "epochs": 10,
+        "batch_size": 64,
+        "activation": "ReLU",
+        "seed": 42
+    },
+    "selected_dropout": 0.2,
+    "results": [
+        {
+            "dropout_rate": 0.0,
+            "train_accuracy": 0.9962777777777778,
+            "validation_accuracy": 0.9745,
+            "test_accuracy": 0.9791,
+            "train_loss": 0.010931797167158475,
+            "validation_loss": 0.11008610150200328,
+            "test_loss": 0.09120738987874055,
+            "best_validation_accuracy": 0.9763333333333334,
+            "best_validation_loss": 0.08909464602629392,
+            "best_epoch": 5,
+            "training_time_seconds": 51.27662097099983
+        },
+        {
+            "dropout_rate": 0.1,
+            "train_accuracy": 0.9962407407407408,
+            "validation_accuracy": 0.9781666666666666,
+            "test_accuracy": 0.981,
+            "train_loss": 0.011980310117027123,
+            "validation_loss": 0.08903774380165107,
+            "test_loss": 0.07349819502224836,
+            "best_validation_accuracy": 0.9781666666666666,
+            "best_validation_loss": 0.08269416486862351,
+            "best_epoch": 10,
+            "training_time_seconds": 63.207674219999944
+        },
+        {
+            "dropout_rate": 0.2,
+            "train_accuracy": 0.9970925925925926,
+            "validation_accuracy": 0.981,
+            "test_accuracy": 0.9829,
+            "train_loss": 0.010261038425577827,
+            "validation_loss": 0.07789208010188525,
+            "test_loss": 0.0594260411887615,
+            "best_validation_accuracy": 0.981,
+            "best_validation_loss": 0.07789208010188525,
+            "best_epoch": 10,
+            "training_time_seconds": 56.85548255499998
+        },
+        {
+            "dropout_rate": 0.3,
+            "train_accuracy": 0.9940740740740741,
+            "validation_accuracy": 0.9778333333333333,
+            "test_accuracy": 0.9804,
+            "train_loss": 0.019137968062419547,
+            "validation_loss": 0.08457811331159974,
+            "test_loss": 0.07086222227279905,
+            "best_validation_accuracy": 0.979,
+            "best_validation_loss": 0.07880847407542912,
+            "best_epoch": 9,
+            "training_time_seconds": 54.43318017799993
+        },
+        {
+            "dropout_rate": 0.5,
+            "train_accuracy": 0.9878703703703704,
+            "validation_accuracy": 0.9745,
+            "test_accuracy": 0.9773,
+            "train_loss": 0.039673931730974096,
+            "validation_loss": 0.09609367681868089,
+            "test_loss": 0.08161282890966952,
+            "best_validation_accuracy": 0.9745,
+            "best_validation_loss": 0.09212908934066608,
+            "best_epoch": 10,
+            "training_time_seconds": 48.926005857999826
+        }
+    ]
+}

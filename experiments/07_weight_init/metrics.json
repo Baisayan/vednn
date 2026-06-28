@@ -1,0 +1,45 @@
+{
+    "experiment": "weight_initialization",
+    "fixed_configuration": {
+        "architecture": [
+            256,
+            128
+        ],
+        "activation": "ReLU",
+        "dropout": 0.2,
+        "optimizer": "Adam",
+        "learning_rate": 0.001,
+        "batch_size": 64,
+        "epochs": 10,
+        "seed": 42
+    },
+    "selected_initialization": "xavier",
+    "results": [
+        {
+            "initialization": "xavier",
+            "train_accuracy": 0.9972407407407408,
+            "validation_accuracy": 0.981,
+            "test_accuracy": 0.9829,
+            "train_loss": 0.010680720892352391,
+            "validation_loss": 0.07533260908307529,
+            "test_loss": 0.06180855326787537,
+            "best_validation_accuracy": 0.981,
+            "best_validation_loss": 0.07510477683202567,
+            "best_epoch": 10,
+            "training_time_seconds": 66.04762030499978
+        },
+        {
+            "initialization": "he",
+            "train_accuracy": 0.9970925925925926,
+            "validation_accuracy": 0.981,
+            "test_accuracy": 0.9829,
+            "train_loss": 0.010261038425577827,
+            "validation_loss": 0.07789208010188525,
+            "test_loss": 0.0594260411887615,
+            "best_validation_accuracy": 0.981,
+            "best_validation_loss": 0.07789208010188525,
+            "best_epoch": 10,
+            "training_time_seconds": 55.54083297599982
+        }
+    ]
+}
