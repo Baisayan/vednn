@@ -347,5 +347,7 @@ print(f"Test Accuracy: {test_acc * 100:.2f}%")
 - [Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet (He et al., 2015)](https://arxiv.org/abs/1502.01852) — He initialization
 - [Dropout: A Simple Way to Prevent Neural Networks from Overfitting (Srivastava et al., 2014)](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf) — regularization technique
 - [An Overview of Gradient Descent Optimization Algorithms (Ruder, 2016)](https://arxiv.org/abs/1609.04747) — survey of SGD variants, momentum, and Adam
-- [Neural Networks and Deep Learning (Nielsen)](http://neuralnetworksanddeeplearning.com/) — accessible online book on NumPy-based neural networks
-- [miniflux / micrograd (Karpathy)](https://github.com/karpathy/micrograd) — inspired the minimal-autograd philosophy
+
+## License
+
+MIT. See [LICENSE](LICENSE) for details.
